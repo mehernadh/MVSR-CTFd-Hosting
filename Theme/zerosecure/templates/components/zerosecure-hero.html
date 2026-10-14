@@ -1,0 +1,46 @@
+<section class="zs-hero" aria-labelledby="zs-event-title">
+  <div class="container">
+    <div class="zs-hero-topline">
+      <span class="zs-eyebrow"><span class="zs-status-dot" aria-hidden="true"></span> CICADA 3301 PRESENTS</span>
+      <span class="zs-coordinate" aria-hidden="true">SYS / ZEROSECURE / 02</span>
+    </div>
+    <div class="zs-hero-grid">
+      <div class="zs-hero-copy">
+        <p class="zs-kicker">MVSR ENGINEERING COLLEGE</p>
+        <h1 id="zs-event-title" class="zs-wordmark">ZERO<span>SECURE</span><strong>2.0<span class="zs-cursor" aria-hidden="true">_</span></strong></h1>
+        <p class="zs-hero-subtitle">CAPTURE THE FLAG</p>
+        <p class="zs-hero-description">Think like a hacker. Follow the clues.<br>Find the flag.</p>
+        <div class="zs-hero-actions">
+          {% if authed() %}
+            <a class="btn btn-primary" href="{{ url_for('challenges.listing') }}">Enter the arena <span aria-hidden="true">&rarr;</span></a>
+            {% if Configs.user_mode == 'teams' %}
+              <a class="btn btn-outline-primary" href="{{ url_for('teams.private') }}">Your team</a>
+            {% endif %}
+          {% else %}
+            {% if registration_visible() %}
+              <a class="btn btn-primary" href="{{ url_for('auth.register') }}">Register to play <span aria-hidden="true">&rarr;</span></a>
+            {% endif %}
+            <a class="btn btn-outline-primary" href="{{ url_for('auth.login') }}">Player login</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="zs-terminal" aria-hidden="true">
+        <div class="zs-terminal-bar"><span class="zs-terminal-dots">&#9679; &#9679; &#9679;</span><span>zerosecure / terminal</span><span>_</span></div>
+        <div class="zs-terminal-content">
+          <p><span class="zs-terminal-prompt">root@zerosecure:~$</span> ./enter_arena</p>
+          <p class="zs-terminal-muted">[ INITIALISING CHALLENGE ENVIRONMENT ]</p>
+          <div class="zs-terminal-glyph">{<span>0</span>}</div>
+          <p><span class="zs-terminal-prompt">[OK]</span> Curiosity is your greatest exploit.</p>
+          <p><span class="zs-terminal-prompt">[OK]</span> Every flag has a story.</p>
+          <div class="zs-terminal-divider"></div>
+          <p class="zs-terminal-prompt">&gt; YOUR NEXT MOVE<span class="zs-cursor">_</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="zs-event-strip">
+      <div><span class="zs-event-label">THE MISSION</span><strong>Capture the flag</strong></div>
+      <div><span class="zs-event-label">THE COMMUNITY</span><strong>Cicada 3301</strong></div>
+      <div><span class="zs-event-label">THE VENUE</span><strong>MVSR Engineering College</strong></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if request.path.rstrip('/') == '' and Configs.theme_settings and Configs.theme_settings.get('zerosecure_home') == 'on' %}
+		{% include "components/zerosecure-hero.html" %}
+	{% endif %}
+	<div class="container">
+	{{ content | safe }}
+	</div>
+{% endblock %}
