@@ -17,6 +17,4 @@ services:
       REVERSE_PROXY: "true"
     volumes:
       - /mnt/ctfd-efs/uploads:/var/uploads
-      - ./conf:/opt/CTFd/conf:ro
-      - ./CTFd:/opt/CTFd/CTFd:ro
-      - ./themes:/opt/CTFd/themes:ro
+      - .:/opt/CTFd:ro
